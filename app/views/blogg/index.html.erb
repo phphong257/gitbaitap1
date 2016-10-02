@@ -1,0 +1,24 @@
+<form>
+	user: <input name="username"></br>
+	blog: <input name="blog"></br>
+	comment: <input name="comment"></br>
+	<button type="submit">post</button></br>
+</form>
+<table>
+	<tr>
+		<th>id</th>
+		<th>username</th>th>
+		<th>blog </th>
+		<th>comment</th>
+		<th>action</th>
+	</tr>
+	<% @detail.each do |detail|%>
+		<tr>
+			<td><%= detail.id %></td>
+			<td><%= detail.username %></td>
+			<td><%= detail.blog %></td>
+			<td><%= detail.comment %></td>
+			<td><%= link_to('show',  blogg_path(detail.id)) %></td>
+		</tr>
+	<% end %>
+</table>
